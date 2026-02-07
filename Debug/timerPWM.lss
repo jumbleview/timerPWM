@@ -1,0 +1,363 @@
+
+timerPWM.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000268  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         00000080  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      0000002f  00000000  00000000  00000268  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  00000297  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000050  00000000  00000000  000002a5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a64  00000000  00000000  000002f5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006fb  00000000  00000000  00000d59  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002f0  00000000  00000000  00001454  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000a0  00000000  00000000  00001744  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000208  00000000  00000000  000017e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000131  00000000  00000000  000019ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000040  00000000  00000000  00001b1d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  000001c6  000001c6  0000025a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001b60  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.usartInit 00000016  00000170  00000170  00000204  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.usartTransmit 0000000e  0000019c  0000019c  00000230  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.usartIsEmpty 0000000e  000001aa  000001aa  0000023e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.usartReceive 0000000e  000001b8  000001b8  0000024c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.usartPrint 0000002c  00000144  00000144  000001d8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.usartGetDecimal 0000003c  00000108  00000108  0000019c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .progmemx.data 0000003d  00000080  00000080  00000114  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
+ 21 .text.main    0000004a  000000be  000000be  00000152  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .text.__dummy_fini 00000002  000001ce  000001ce  00000262  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.__dummy_funcs_on_exit 00000002  000001d0  000001d0  00000264  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.__dummy_simulator_exit 00000002  000001d2  000001d2  00000266  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.exit    00000016  00000186  00000186  0000021a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text._Exit   00000004  000001ca  000001ca  0000025e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+   8:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+   c:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  10:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  14:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  18:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  1c:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  20:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  24:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  28:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  2c:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  30:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  34:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  38:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  3c:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  40:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  44:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  48:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  4c:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  50:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  54:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  58:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  5c:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  60:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+  64:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 5f 00 	call	0xbe	; 0xbe <main>
+  78:	0c 94 c3 00 	jmp	0x186	; 0x186 <exit>
+
+0000007c <_exit>:
+  7c:	f8 94       	cli
+
+0000007e <__stop_program>:
+  7e:	ff cf       	rjmp	.-2      	; 0x7e <__stop_program>
+
+Disassembly of section .text:
+
+000001c6 <__bad_interrupt>:
+ 1c6:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.usartInit:
+
+00000170 <usartInit>:
+
+// -v- USART functions -v-
+// usartInit initializes USART hardware 
+void usartInit(unsigned int ubrr) {
+	// Set baud rate registers
+	UBRR0H = (unsigned char)(ubrr >> 8);
+ 170:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+	UBRR0L = (unsigned char)ubrr;
+ 174:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	
+	// Enable receiver and transmitter
+	UCSR0B = (1 << RXEN0) | (1 << TXEN0);
+ 178:	88 e1       	ldi	r24, 0x18	; 24
+ 17a:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	
+	// Set frame format: 8 data bits, 1 stop bit
+	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
+ 17e:	86 e0       	ldi	r24, 0x06	; 6
+ 180:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 184:	08 95       	ret
+
+Disassembly of section .text.usartTransmit:
+
+0000019c <usartTransmit>:
+}
+
+// usartTransmit sends one symbol via USART
+void usartTransmit(unsigned char data) {
+	// Wait for empty transmit buffer
+	while (!(UCSR0A & (1 << UDRE0)));
+ 19c:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 1a0:	95 ff       	sbrs	r25, 5
+ 1a2:	fc cf       	rjmp	.-8      	; 0x19c <usartTransmit>
+	
+	// Put data into buffer (sends the data)
+	UDR0 = data;
+ 1a4:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 1a8:	08 95       	ret
+
+Disassembly of section .text.usartIsEmpty:
+
+000001aa <usartIsEmpty>:
+}
+
+// usartIsEmpty returns  'true' if there is no data to receive via USART  
+bool usartIsEmpty() {
+	return !(UCSR0A & (1 << RXC0));
+ 1aa:	80 91 c0 00 	lds	r24, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 1ae:	80 95       	com	r24
+}
+ 1b0:	88 1f       	adc	r24, r24
+ 1b2:	88 27       	eor	r24, r24
+ 1b4:	88 1f       	adc	r24, r24
+ 1b6:	08 95       	ret
+
+Disassembly of section .text.usartReceive:
+
+000001b8 <usartReceive>:
+
+// usartReceive waits for single byte to arrive via USART and returns it 
+unsigned char usartReceive(void) {
+	/* Wait for data to be received */
+	while (usartIsEmpty());
+ 1b8:	0e 94 d5 00 	call	0x1aa	; 0x1aa <usartIsEmpty>
+ 1bc:	81 11       	cpse	r24, r1
+ 1be:	fc cf       	rjmp	.-8      	; 0x1b8 <usartReceive>
+	
+	/* Get and return received data from buffer */
+	return UDR0;
+ 1c0:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+}
+ 1c4:	08 95       	ret
+
+Disassembly of section .text.usartPrint:
+
+00000144 <usartPrint>:
+
+// usartPrint sends string buffer via USART
+void usartPrint(const char* str) {
+ 144:	cf 92       	push	r12
+ 146:	df 92       	push	r13
+ 148:	ef 92       	push	r14
+ 14a:	6b 01       	movw	r12, r22
+ 14c:	e8 2e       	mov	r14, r24
+	while (*str) {
+ 14e:	06 c0       	rjmp	.+12     	; 0x15c <usartPrint+0x18>
+		usartTransmit(*str++);
+ 150:	9f ef       	ldi	r25, 0xFF	; 255
+ 152:	c9 1a       	sub	r12, r25
+ 154:	d9 0a       	sbc	r13, r25
+ 156:	e9 0a       	sbc	r14, r25
+ 158:	0e 94 ce 00 	call	0x19c	; 0x19c <usartTransmit>
+	return UDR0;
+}
+
+// usartPrint sends string buffer via USART
+void usartPrint(const char* str) {
+	while (*str) {
+ 15c:	f6 01       	movw	r30, r12
+ 15e:	84 91       	lpm	r24, Z
+ 160:	e7 fc       	sbrc	r14, 7
+ 162:	80 81       	ld	r24, Z
+ 164:	81 11       	cpse	r24, r1
+ 166:	f4 cf       	rjmp	.-24     	; 0x150 <usartPrint+0xc>
+		usartTransmit(*str++);
+	}
+}
+ 168:	ef 90       	pop	r14
+ 16a:	df 90       	pop	r13
+ 16c:	cf 90       	pop	r12
+ 16e:	08 95       	ret
+
+Disassembly of section .text.usartGetDecimal:
+
+00000108 <usartGetDecimal>:
+
+// usartGetDecimal read input line form serial interface ('\r\) arrives. If incoming character is decimal
+// previous result multiplied by 10 and incoming character converted to number and added to the result
+uint8_t usartGetDecimal(){
+ 108:	cf 93       	push	r28
+ 10a:	df 93       	push	r29
+	uint8_t decimal = 0;
+ 10c:	d0 e0       	ldi	r29, 0x00	; 0
+	unsigned char input = '\0';
+	do {
+		input = usartReceive();
+ 10e:	0e 94 dc 00 	call	0x1b8	; 0x1b8 <usartReceive>
+ 112:	c8 2f       	mov	r28, r24
+		usartTransmit(input);
+ 114:	0e 94 ce 00 	call	0x19c	; 0x19c <usartTransmit>
+		if (input < '0' || input > '9') {
+ 118:	80 ed       	ldi	r24, 0xD0	; 208
+ 11a:	8c 0f       	add	r24, r28
+ 11c:	8a 30       	cpi	r24, 0x0A	; 10
+ 11e:	48 f4       	brcc	.+18     	; 0x132 <usartGetDecimal+0x2a>
+			continue;
+		}
+		decimal = decimal*10 + (input - '0');
+ 120:	8d 2f       	mov	r24, r29
+ 122:	88 0f       	add	r24, r24
+ 124:	98 2f       	mov	r25, r24
+ 126:	99 0f       	add	r25, r25
+ 128:	99 0f       	add	r25, r25
+ 12a:	89 0f       	add	r24, r25
+ 12c:	8c 0f       	add	r24, r28
+ 12e:	d0 ed       	ldi	r29, 0xD0	; 208
+ 130:	d8 0f       	add	r29, r24
+	} while(input != '\r');
+ 132:	cd 30       	cpi	r28, 0x0D	; 13
+ 134:	61 f7       	brne	.-40     	; 0x10e <usartGetDecimal+0x6>
+	usartTransmit('\n');
+ 136:	8a e0       	ldi	r24, 0x0A	; 10
+ 138:	0e 94 ce 00 	call	0x19c	; 0x19c <usartTransmit>
+	return decimal;
+}
+ 13c:	8d 2f       	mov	r24, r29
+ 13e:	df 91       	pop	r29
+ 140:	cf 91       	pop	r28
+ 142:	08 95       	ret
+
+Disassembly of section .text.main:
+
+000000be <main>:
+
+}
+
+// -v- main -v- 
+int main(void) {
+	pinOut(B,1);   // Configure B1 for output
+  be:	84 b1       	in	r24, 0x04	; 4
+  c0:	82 60       	ori	r24, 0x02	; 2
+  c2:	84 b9       	out	0x04, r24	; 4
+	usartInit(MYUBRR);
+  c4:	83 e3       	ldi	r24, 0x33	; 51
+  c6:	90 e0       	ldi	r25, 0x00	; 0
+  c8:	0e 94 b8 00 	call	0x170	; 0x170 <usartInit>
+	usartPrint("Hello from ATmega328!\r\n");	
+  cc:	60 e8       	ldi	r22, 0x80	; 128
+  ce:	70 e0       	ldi	r23, 0x00	; 0
+  d0:	80 e0       	ldi	r24, 0x00	; 0
+  d2:	0e 94 a2 00 	call	0x144	; 0x144 <usartPrint>
+//	DDRB |= (1 << DDB1);
+
+	// 2. Configure Timer1 for Fast PWM, 8-bit
+	// Mode 5: WGM13=0, WGM12=1, WGM11=0, WGM10=1
+	// Compare Output Mode: Clear OC1A on compare match, set at BOTTOM (non-inverting)
+	TCCR1A = (1 << COM1A1) | (1 << WGM10);  // non-inverting mode
+  d6:	81 e8       	ldi	r24, 0x81	; 129
+  d8:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+	
+	// TCCR1A = (1 << COM1A1) | (1 << COM1A0) | (1 << WGM10); // inverting mode
+	
+	TCCR1B = (1 << WGM12) | (1 << CS11) | (1 << CS10) ; //  Prescaler is 64
+  dc:	8b e0       	ldi	r24, 0x0B	; 11
+  de:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+
+	OCR1A = 255;
+  e2:	8f ef       	ldi	r24, 0xFF	; 255
+  e4:	90 e0       	ldi	r25, 0x00	; 0
+  e6:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+  ea:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+	usartInit(MYUBRR);
+	usartPrint("Hello from ATmega328!\r\n");	
+	initTimer();
+	uint8_t brightness = 255;
+while (1) {
+		usartPrint("\r\nEnter (0-255) for PWM duty cycle: ");
+  ee:	68 e9       	ldi	r22, 0x98	; 152
+  f0:	70 e0       	ldi	r23, 0x00	; 0
+  f2:	80 e0       	ldi	r24, 0x00	; 0
+  f4:	0e 94 a2 00 	call	0x144	; 0x144 <usartPrint>
+		brightness = usartGetDecimal();
+  f8:	0e 94 84 00 	call	0x108	; 0x108 <usartGetDecimal>
+		OCR1A = brightness;
+  fc:	90 e0       	ldi	r25, 0x00	; 0
+  fe:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+ 102:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+ 106:	f3 cf       	rjmp	.-26     	; 0xee <main+0x30>
+
+Disassembly of section .text.__dummy_fini:
+
+000001ce <_fini>:
+ 1ce:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+000001d0 <__funcs_on_exit>:
+ 1d0:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+000001d2 <__simulator_exit>:
+ 1d2:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+00000186 <exit>:
+ 186:	ec 01       	movw	r28, r24
+ 188:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <__funcs_on_exit>
+ 18c:	0e 94 e7 00 	call	0x1ce	; 0x1ce <_fini>
+ 190:	ce 01       	movw	r24, r28
+ 192:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <__simulator_exit>
+ 196:	ce 01       	movw	r24, r28
+ 198:	0e 94 e5 00 	call	0x1ca	; 0x1ca <_Exit>
+
+Disassembly of section .text._Exit:
+
+000001ca <_Exit>:
+ 1ca:	0e 94 3e 00 	call	0x7c	; 0x7c <_exit>
